@@ -20,7 +20,7 @@ public class OrderProcessingRepo {
         this.simpleJdbcCall = new SimpleJdbcCall(dataSource)
                 .withProcedureName("sp_process_order")
                 .declareParameters(
-                        new SqlParameter("p_customer_id", Types.BIGINT),
+                         new SqlParameter("p_customer_id", Types.BIGINT),
                         new SqlParameter("p_product_id", Types.BIGINT),
                         new SqlParameter("p_quantity", Types.INTEGER),
                         new SqlOutParameter("p_order_id", Types.BIGINT),
@@ -39,5 +39,6 @@ public class OrderProcessingRepo {
         return simpleJdbcCall.execute(inputParams);
 
     }
+
 
 }
